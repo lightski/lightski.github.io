@@ -52,6 +52,9 @@ baseurl: ""
 # use a theme
 theme: jekyll-theme-hacker
 
+# stop jekyll from publishing posts dated in the future. Run with --future to ignore
+future: false
+
 #
 # !! You don't need to change any of the configuration flags below !!
 #
