@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 And here it is in action:
 ```shell
 vagrant@vagrant-laptop:~/src $ gcc overflow_example.c 
-vagrant@vagrant-laptop:~/src $ ./a.out 12345                                     
+vagrant@vagrant-laptop:~/src $ ./a.out 12345
 [BEFORE] buffer_one is at 0xbffffc78 and contains 'one'
 [BEFORE] buffer_two is at 0xbffffc70 and contains 'two'
 [BEFORE] value is at 0xbffffc84 and is 5 (0x00000005)
@@ -51,7 +51,7 @@ vagrant@vagrant-laptop:~/src $ ./a.out 12345
 [AFTER] buffer_one is at 0xbffffc78 and contains 'one'
 [AFTER] buffer_two is at 0xbffffc70 and contains '12345'
 [AFTER] value is at 0xbffffc84 and is 5 (0x00000005)
-vagrant@vagrant-laptop:~/src $ ./a.out 12345678901234567890                                 
+vagrant@vagrant-laptop:~/src $ ./a.out 12345678901234567890                           
 [BEFORE] buffer_one is at 0xbffffc68 and contains 'one'
 [BEFORE] buffer_two is at 0xbffffc60 and contains 'two'
 [BEFORE] value is at 0xbffffc74 and is 5 (0x00000005)
@@ -61,7 +61,8 @@ vagrant@vagrant-laptop:~/src $ ./a.out 12345678901234567890
 [AFTER] buffer_one is at 0xbffffc68 and contains '901234567890'
 [AFTER] buffer_two is at 0xbffffc60 and contains '12345678901234567890'
 [AFTER] value is at 0xbffffc74 and is 0 (0x00000000)
-vagrant@vagrant-laptop:~/src $
+vagrant@vagrant-laptop:~/src $ 
+
 ```
 
 The buffers are 8 bytes long, so we can safely store anything up to 8 characters in them. When we pass in a longer input, the extra bytes overwrite other variables. How, exactly is this exploitable? Tune in tomorrow to find out.
